@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       ],
     );
 
-    // Langkah 1: Buat widget textSection
+    // Bagian Text Section
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
@@ -65,9 +65,14 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        // Langkah 2: Tambahkan variabel textSection ke body
-        body: Column(
+        body: ListView( // Menggunakan ListView agar bisa di-scroll jika layar penuh
           children: [
+            Image.asset(
+              'images/objek_wisata.png',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection,
             buttonSection,
             textSection,
@@ -77,7 +82,6 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // Method pembantu untuk button column
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
