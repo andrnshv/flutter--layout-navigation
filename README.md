@@ -14,7 +14,7 @@ A new Flutter project.
 - Di dalam widget Column pada Scaffold, sekarang terdapat dua variabel yaitu titleSection dan buttonSection yang disusun secara vertikal.
 
 * Praktikum 3: Implementasi text section
-![Screenshot hello_world](images/02.png)
+![Screenshot hello_world](images/03.png)
 - textSection: Menggunakan Container dengan padding 32 agar teks tidak menyentuh pinggir layar.
 - softWrap: true: Menjamin teks otomatis pindah ke baris baru saat mencapai batas lebar layar.
 - body: Column: Menyusun titleSection, buttonSection, dan textSection secara berurutan dari atas ke bawah
