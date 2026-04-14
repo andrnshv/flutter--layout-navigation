@@ -7,45 +7,45 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Bagian Title Section
     Widget titleSection = Container(
-      /* soal 3: Padding di sepanjang setiap tepinya sebesar 32 piksel */
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
-          /* soal 1: Column di dalam Expanded */
           Expanded(
             child: Column(
-              /* soal 1: crossAxisAlignment ke start */
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /* soal 2: Teks pertama di dalam Container dengan padding bawah 8 */
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
                     'Wisata Gunung di Batu',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                /* soal 2: Teks lokasi dengan warna abu-abu */
                 Text(
                   'Batu, Malang, Indonesia',
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
+                  style: TextStyle(color: Colors.grey[500]),
                 ),
               ],
             ),
           ),
-          /* soal 3: Ikon bintang warna merah dan teks "41" */
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
+    );
+
+    // Langkah 2: Buat widget buttonSection
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
     );
 
     return MaterialApp(
@@ -54,13 +54,36 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        /* Ganti body 'Hello World' dengan variabel titleSection di dalam Column */
+        // Langkah 3: Tambah buttonSection ke body
         body: Column(
           children: [
             titleSection,
+            buttonSection,
           ],
         ),
       ),
+    );
+  }
+
+  // Langkah 1: Buat method Column _buildButtonColumn
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(icon, color: color),
+        Container(
+          margin: const EdgeInsets.only(top: 8),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: color,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
