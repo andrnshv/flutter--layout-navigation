@@ -12,3 +12,10 @@ A new Flutter project.
 ![Screenshot hello_world](images/02.png)
 - buttonSection: Didefinisikan di bawah titleSection. Widget ini menggunakan MainAxisAlignment.spaceEvenly agar ketiga tombol (CALL, ROUTE, SHARE) memiliki jarak yang sejajar dan rapi
 - Di dalam widget Column pada Scaffold, sekarang terdapat dua variabel yaitu titleSection dan buttonSection yang disusun secara vertikal.
+
+* Praktikum 3: Implementasi text section
+![Screenshot hello_world](images/02.png)
+- textSection: Menggunakan Container dengan padding 32 agar teks tidak menyentuh pinggir layar.
+- softWrap: true: Menjamin teks otomatis pindah ke baris baru saat mencapai batas lebar layar.
+- body: Column: Menyusun titleSection, buttonSection, dan textSection secara berurutan dari atas ke bawah
+

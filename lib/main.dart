@@ -36,9 +36,8 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // Langkah 2: Buat widget buttonSection
+    // Bagian Button Section
     Color color = Theme.of(context).primaryColor;
-
     Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -48,24 +47,37 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    // Langkah 1: Buat widget textSection
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Banyak di Batu menawarkan pemandangan alam yang luar biasa, '
+        'terkenal sebagai lokasi paralayang terbaik di Jawa Timur. '
+        'Udara yang sejuk dan panorama kota Batu dari ketinggian menjadi daya tarik utama. '
+        '\n\nNama: Andrian Sheva A.F. \nNIM: 244107060062',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Andrian Sheva A.F. - 244107060062',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        // Langkah 3: Tambah buttonSection ke body
+        // Langkah 2: Tambahkan variabel textSection ke body
         body: Column(
           children: [
             titleSection,
             buttonSection,
+            textSection,
           ],
         ),
       ),
     );
   }
 
-  // Langkah 1: Buat method Column _buildButtonColumn
+  // Method pembantu untuk button column
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
